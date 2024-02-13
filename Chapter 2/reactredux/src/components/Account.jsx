@@ -1,25 +1,15 @@
 import React from 'react'
 import { useState } from 'react';
 
-const Account = () => {
-    const[account,setAccout] = useState({ amount:0 });
-    const[value,setValue] = useState(0)
+const Account = ({bonus,amount,incrememt,decrement,incrementByAmount}) => {   
 
-
-    const incrememt = () =>{
-        setAccout({amount: account.amount+1})
-    }
-    const decrement = () =>{
-        setAccout({amount: account.amount-1})
-    }
-    const incrementByAmount = (value) => {
-        setAccout({amount: account.amount+value})
-    }
+    const[value,setValue] = useState(0);
 
   return (
     <div className='card'>
         <h3>Account Component</h3>
-        <h2>Amount :${account.amount}</h2>
+        <h2>Amount :${amount}</h2>
+        <h2>Bonus :${bonus}</h2>
         <button onClick={incrememt} >Increment +</button>
         <button onClick={decrement}>Decrement -</button>
         <input type="text" onChange={(e)=> {setValue(+e.target.value)}} />
