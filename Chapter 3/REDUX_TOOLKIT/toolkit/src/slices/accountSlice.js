@@ -28,7 +28,7 @@ export const accountSlice = createSlice({
     incrementByAmount: (state, action) => {
       state.amount += action.payload
     },
-  },
+  },  
   extraReducers:(builder)=>{
     builder.addCase(getUserAccount.fulfilled,(state,action)=>{
         state.amount = action.payload;
